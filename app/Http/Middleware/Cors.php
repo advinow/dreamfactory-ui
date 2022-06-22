@@ -15,15 +15,10 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-        $response = $next($request);
-
-        $response->header("Access-Control-Allow-Origin","*");
-        $response->header("Access-Control-Allow-Credentials","true");
-        $response->header("Access-Control-Max-Age","600");    // cache for 10 minutes
-        $response->header("Access-Control-Allow-Methods","*"); //Make sure you remove those you do not want to support
-        $response->header("Access-Control-Allow-Headers", "*");
-
-        return $response;
+        return $next($request)
+            ->header("Access-Control-Allow-Origin","*")
+            ->header("Access-Control-Allow-Methods","PUT,POST,DELETE,GET,OPTIONS")
+            ->header("Access-Control-Allow-Headers", "Accept,Authorization,Content-Type");
     }
 
 }
