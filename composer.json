@@ -99,12 +99,13 @@
   },
   "scripts": {
     "post-autoload-dump": [
-      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump"
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
     ]
   },
   "config": {
     "platform": {
-      "php": "7.4"
+      "php": "7.4|^8.1"
     },
     "preferred-install": "dist",
     "sort-packages": true,
