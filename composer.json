@@ -97,12 +97,6 @@
       "dont-discover": []
     }
   },
-  "scripts": {
-    "post-autoload-dump": [
-      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-      "@php artisan package:discover --ansi"
-    ]
-  },
   "config": {
     "platform": {
       "php": "7.4"
