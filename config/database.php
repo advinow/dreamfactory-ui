@@ -57,11 +57,6 @@ return [
             'prefix'    => env('DB_PREFIX', ''),
             'strict'    => true,
             'engine'    => null,
-            'sslmode'   => 'require',
-            'options'   => [
-                PDO::MYSQL_ATTR_SSL_CA => '/storage/us-west-2-bundle.pem',
-                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
-            ],
         ],
 
         'pgsql' => [

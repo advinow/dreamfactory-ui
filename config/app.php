@@ -10,7 +10,7 @@ return [
     | This is the version of your application, not the version of the API.
     */
 
-    'version' => '4.11.1',
+    'version' => '5.0.1',
 
     /*
     |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'development'),
+    'env' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://dreamfactory.dev.advinow.ai'), # 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost'),
     'asset_url' => env('ASSET_URL', null),
 
     /*
