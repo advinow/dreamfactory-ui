@@ -1,0 +1,26 @@
+name: Delete Stale Branches
+
+on:
+  push:
+    branches:
+      - production
+    paths:
+      - '.github/workflows/stale-branches.yaml'
+  schedule:
+    - cron: '0 0 * * 6'
+
+jobs:
+  cleanup_old_branches:
+    runs-on: self-hosted
+    name: Delete Stale Branches
+    steps:
+      - name: Find and delete stale branches
+        uses: phpdocker-io/github-actions-delete-abandoned-branches@v1
+        id: delete_stuff
+        with:
+          github_token: ${{ secrets.ADVINOW_GITHUB_TOKEN }}
+          last_commit_age_days: 120
+          ignore_branches: production,staging,development
+          dry_run: no
+      - name: Get output
+        run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
